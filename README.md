@@ -1,3 +1,7 @@
 Prueba de drones.
 
-Instrucciones
+Planteamiento del problema.
+
+Asumiciones.
+
+
