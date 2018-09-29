@@ -1,0 +1,147 @@
+{
+	"id": "b6e9ebe8-0c4b-a4b0-344b-e1cd7ec7b949",
+	"name": "Drones",
+	"description": "",
+	"order": [
+		"2ea90c47-ac71-6a00-31d2-6f3993713936",
+		"bc0acba6-d1a8-06f4-d1af-313e540457fc",
+		"91791a9a-1b8e-c9a5-e8e2-f43a57a9d977",
+		"9bd333f7-6e54-1bce-a299-a5725545d16e"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1538253086523,
+	"owner": "752988",
+	"public": false,
+	"requests": [
+		{
+			"id": "2ea90c47-ac71-6a00-31d2-6f3993713936",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/7x7/findUrb/?coord1=121.1&coord2=421.13",
+			"queryParams": [
+				{
+					"key": "coord1",
+					"value": "121.1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "coord2",
+					"value": "421.13",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b6e9ebe8-0c4b-a4b0-344b-e1cd7ec7b949",
+			"data": null,
+			"dataMode": "params",
+			"name": "getUrbanizationByCoord",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1538260790196,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "91791a9a-1b8e-c9a5-e8e2-f43a57a9d977",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/7x7/getmap",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b6e9ebe8-0c4b-a4b0-344b-e1cd7ec7b949",
+			"data": null,
+			"dataMode": "params",
+			"name": "getMap",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1538263167148,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "9bd333f7-6e54-1bce-a299-a5725545d16e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/7x7/geturbanizations/?coord1=121.1&coord2=121.13&range=2",
+			"folder": null,
+			"queryParams": [
+				{
+					"key": "coord1",
+					"value": "121.1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "coord2",
+					"value": "121.13",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "range",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538264262452,
+			"name": "getUrbanizations",
+			"description": "",
+			"collectionId": "b6e9ebe8-0c4b-a4b0-344b-e1cd7ec7b949",
+			"responses": []
+		},
+		{
+			"id": "bc0acba6-d1a8-06f4-d1af-313e540457fc",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8090/7x7/findAdjacent/4/right",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b6e9ebe8-0c4b-a4b0-344b-e1cd7ec7b949",
+			"data": null,
+			"dataMode": "params",
+			"name": "getAdjacent",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1538261801340,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
