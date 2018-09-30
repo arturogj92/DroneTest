@@ -1,5 +1,13 @@
 # [Prueba de drones]
 
+## Contenido
+1. [Planteamiento del problema](#planteamiento-del-problema)
+2. [Instrucciones de ejecución](#instrucciones-de-ejecución)
+3. [Instrucciones de utilización](#instrucciones-de-utilización)
+4. [Mapas a utilizar](#mapas-a-utilizar)
+
+
+
 ## Planteamiento del problema.
 Antes de comenzar a explicar el problema se han realizado una serie de consideraciones que se desarrollaran a continuación. Esto se debe a que considero que el negocio del problema no está 100% desarrollado. En una situación real esto lo solucionaria hablando con un Business Analyst / Product owner o bien Stakeholder si fuese necesario.
 
@@ -19,9 +27,6 @@ Antes de comenzar a explicar el problema se han realizado una serie de considera
 
 ![Mapa 5x5](https://i.imgur.com/VTzHihD.png)
 
-
-
-
 ## Instrucciones de ejecución.
 
 1. Importar proyecto como proyecto de maven en cualquier IDE de java. (Preferiblemente STS o Eclipse).
@@ -31,7 +36,7 @@ Antes de comenzar a explicar el problema se han realizado una serie de considera
 5. La aplicación se ejecutará en el puerto 8090 por defecto.
 6. Importar la colección de POSTMAN "Drones.postman_collection.json" la cual se incluye en la raiz del proyecto. En caso de que no se quiera usar este software a continuación se desarrollarán los endpoints y funciones.
 
-## Instrucciones de utilización
+## Instrucciones de utilización.
 
 La API contará con las siguientes funciones.
 
