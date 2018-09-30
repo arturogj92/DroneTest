@@ -13,7 +13,7 @@ Antes de comenzar a explicar el problema se han realizado una serie de considera
 
 ### Restricciones
 1. Se ha asumido que el centro del mapa siempre será el rango -1.
-2. A la hora de obtener las urbanizaciones mediante el método **obtenerUrbanizaciones(Coord1, Coord2, Rango)**, se considera que la Coord1 y Coord2 pertenecen la ubicación en la que el drone empezará, por lo tanto será una urbanización que se añadirá al listado, ya que pasa por ella.
+2. A la hora de obtener las urbanizaciones mediante el método **obtenerUrbanizaciones(Coord1, Coord2, Rango)**, se considera que la Coord1 y Coord2 pertenecen a la ubicación en la que el drone empezará, por lo tanto será una urbanización que se añadirá al listado que se entregará al drone, ya que pasa por ella.
 3. Una urbanización solo puede pertenecer a un rango, es decir, las urbanizaciones que pertenezcan al Rango 1, no están en el subconjunto de urbanizaciones del Rango 2.
 4. El tamaño del mapa siempre será de MxM es decir, serán mapas cuadrados.
 5. Se ha realizado una API para que sea más sencilla de consumir y sus datos puedan ser utilizados.
@@ -22,7 +22,7 @@ Antes de comenzar a explicar el problema se han realizado una serie de considera
   
 ![Urbanization](https://img.imgur.com/8aIHuSA.png)
 
-8. No se ha definido el movimiento del dron, es decir, la función solicitada **obtenerUrbanizaciones** devolverá la lista de urbanizaciones que pertenecen al rango que el dron debe visitar y la urbanización de la que sale, pero no se definirá el camino a seguir.
+8. No se ha definido el movimiento del drone, es decir, la función solicitada **obtenerUrbanizaciones** devolverá la lista de urbanizaciones que pertenecen al rango que el drone debe visitar y la urbanización de la que sale, pero no se definirá el camino o ruta a seguir.
 9. Los ids asociados a las urbanizaciones serán del número **1** hasta el **n**, siendo **n** el número de urbanizaciones totales. El id=1 pertenecerá a la primera urbanizacion empezando por abajo a la izquierda. (Ver mapas en el apartado de **Mapas a utilizar**)
 10. Los rangos de las urbanizaciones comenzarán de fuera hacia adentro. Ejemplo, en el mapa que podemos ver a continuación, el Rango 2 serán las urbanizaciones azules y Rango 1 las urbanizaciones amarillas (el centro pertenecerá al rango -1)
 
@@ -44,9 +44,9 @@ La API contará con las siguientes funciones.
 |Funcion| Ruta | Tipo |Parametros | Descripción | Ejemplo | 
 |---|---|---|---|---|---|
 | getUrbanizationByCoord | `http://localhost:8090/:mapType/findUrb/?coord1=double&coord2=double`| `GET` |String mapType, Double coord1, Double coord2|La función se corresponde a la solicitada 	**"obtenerIdentificadorUrbanización"**. Devolverá una urbanización perteneciente a esas coordenadas| `http://localhost:8090/7x7/findUrb/?coord1=121.1&coord2=421.13` |
-| getAdjacent |`http://localhost:8090/:mapType/findAdjacent/:idUrbanization/:action`| `GET` |int idUrbanization, String action|La función se corresponde a la solicitada **"obtenerAdyacente"**. Devolverá la urbanización adyacente en la dirección indicada. [up down right left]| `http://localhost:8090/7x7/findAdjacent/4/right` |
+| getAdjacent |`http://localhost:8090/:mapType/findAdjacent/:idUrbanization/:action`| `GET` |String mapType, int idUrbanization, String action|La función se corresponde a la solicitada **"obtenerAdyacente"**. Devolverá la urbanización adyacente en la dirección indicada. [up down right left]| `http://localhost:8090/7x7/findAdjacent/4/right` |
 | getMap |`http://localhost:8090/:mapType/getmap`| `GET` |String mapType|Esta función devolverá las urbanizaciones del mapa con sus coordenadas.| `http://localhost:8090/7x7/getmap` |
-| getUrbanizations |`http://localhost:8090/:mapType/getUrbanizations/?coord1=double&coord2=double&range=int`| `GET` |String mapType, Double coord1, Double coord2, int range|La función se corresponde a la solicitada 	**"obtenerUrbanizaciones"**. Devolverá la lista de urbanizaciones que el dron tiene que visitar y el lugar desde el cual saldrá.| `http://localhost:8090/7x7/geturbanizations/?coord1=121.1&coord2=121.13&range=2` |
+| getUrbanizations |`http://localhost:8090/:mapType/getUrbanizations/?coord1=double&coord2=double&range=int`| `GET` |String mapType, Double coord1, Double coord2, int range|La función se corresponde a la solicitada 	**"obtenerUrbanizaciones"**. Devolverá la lista de urbanizaciones que el drone tiene que visitar y el lugar desde el cual saldrá.| `http://localhost:8090/7x7/geturbanizations/?coord1=121.1&coord2=121.13&range=2` |
 
 ## Mapas a utilizar
 
