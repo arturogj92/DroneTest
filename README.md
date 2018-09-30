@@ -40,12 +40,13 @@ Antes de comenzar a explicar el problema se han realizado una serie de considera
 ## Instrucciones de utilización.
 
 La API contará con las siguientes funciones.
+*Nota* Posibles valores de mapType = 3x3 5x5 7x7 o 9x9.
 
 |Funcion| Ruta | Tipo |Parametros | Descripción | Ejemplo | 
 |---|---|---|---|---|---|
 | getUrbanizationByCoord | `http://localhost:8090/:mapType/findUrb/?coord1=double&coord2=double`| `GET` |String mapType, Double coord1, Double coord2|La función se corresponde a la solicitada 	**"obtenerIdentificadorUrbanización"**. Devolverá una urbanización perteneciente a esas coordenadas| `http://localhost:8090/7x7/findUrb/?coord1=121.1&coord2=421.13` |
-| getAdjacent |`http://localhost:8090/:mapType/findAdjacent/:idUrbanization/:action`| `GET` |String mapType, int idUrbanization, String action|La función se corresponde a la solicitada **"obtenerAdyacente"**. Devolverá la urbanización adyacente en la dirección indicada. [up down right left]| `http://localhost:8090/7x7/findAdjacent/4/right` |
-| getMap |`http://localhost:8090/:mapType/getmap`| `GET` |String mapType|Esta función devolverá las urbanizaciones del mapa con sus coordenadas.| `http://localhost:8090/7x7/getmap` |
+| getAdjacent |`http://localhost:8090/:mapType/findAdjacent/:idUrbanization/:action`| `GET` |String mapType, int idUrbanization, String action|La función se corresponde a la solicitada **"obtenerAdyacente"**. Devolverá la urbanización adyacente en la dirección indicada. [up down right left]| `http://localhost:8090/3x3/findAdjacent/4/right` |
+| getMap |`http://localhost:8090/:mapType/getmap`| `GET` |String mapType|Esta función devolverá las urbanizaciones del mapa con sus coordenadas.| `http://localhost:8090/5x5/getmap` |
 | getUrbanizations |`http://localhost:8090/:mapType/getUrbanizations/?coord1=double&coord2=double&range=int`| `GET` |String mapType, Double coord1, Double coord2, int range|La función se corresponde a la solicitada 	**"obtenerUrbanizaciones"**. Devolverá la lista de urbanizaciones que el drone tiene que visitar y el lugar desde el cual saldrá.| `http://localhost:8090/7x7/geturbanizations/?coord1=121.1&coord2=121.13&range=2` |
 
 ## Mapas a utilizar
