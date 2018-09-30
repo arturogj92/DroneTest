@@ -15,6 +15,9 @@ Antes de comenzar a explicar el problema se han realizado una serie de considera
 
 8. No se ha definido el movimiento del dron, es decir, la función solicitada **obtenerUrbanizaciones** devolverá la lista de urbanizaciones que pertenecen al rango que el dron debe visitar y la urbanización de la que sale, pero no se definirá el camino a seguir.
 9. Los ids asociados a las urbanizaciones serán del número **1** hasta el **n**, siendo **n** el número de urbanizaciones totales. El id=1 pertenecerá a la primera urbanizacion empezando por abajo a la izquierda. (Ver mapas en el apartado de **Mapas a utilizar**)
+10. Los rangos de las urbanizaciones comenzarán de fuera hacia adentro. Ejemplo, en el mapa que podemos ver a continuación, el Rango 2 serán las urbanizaciones azules y Rango 1 las urbanizaciones amarillas (el centro pertenecerá al rango -1)
+
+![Mapa 5x5](https://i.imgur.com/VTzHihD.png)
 
 
 
@@ -41,13 +44,18 @@ La API contará con las siguientes funciones.
 
 ## Mapas a utilizar
 
+**Nota:** Cada color representa el rango de la urbanización a la que pertencen. 
+
 1.Mapa 3x3
 ![Mapa 3x3](https://i.imgur.com/0lVo9Wf.png)
+  
 2.Mapa 5x5
 ![Mapa 5x5](https://i.imgur.com/VTzHihD.png)
+  
 3.Mapa 7x7
 ![Mapa 7x7](https://i.imgur.com/fZWsWhp.png)
+  
 4.Mapa 9x9
-![Mapa 9x9](https://i.imgur.com/VTzHihD.png)
+![Mapa 9x9](https://i.imgur.com/NnYijLp.png)
 
 
