@@ -11,9 +11,10 @@ Antes de comenzar a explicar el problema se han realizado una serie de considera
 6. Los mapas utilizados serán de 3x3, 5x5, 7x7 y 9x9. Aunque mediante la modificacion de unas constantes se pueden utilizar mapas de mayor tamaño.
 7. Las urbanizaciones constarán de 4 coordenadas X1, X2, X3 ,X4. Serán siempre cuadrados al igual que el mapa y cada coordenada pertenecerá a un vértice del cuadrado. Ver imagen de abajo.
   
-[alt text](https://i.imgur.com/8aIHuSA.png)
+![Urbanization](https://img.imgur.com/8aIHuSA.png)
 
 8. No se ha definido el movimiento del dron, es decir, la función solicitada **obtenerUrbanizaciones** devolverá la lista de urbanizaciones que pertenecen al rango que el dron debe visitar y la urbanización de la que sale, pero no se definirá el camino a seguir.
+9. Los ids asociados a las urbanizaciones serán del número **1** hasta el **n**, siendo **n** el número de urbanizaciones totales. El id=1 pertenecerá a la primera urbanizacion empezando por abajo a la izquierda. (Ver mapas en el apartado de **Mapas a utilizar**)
 
 
 
@@ -37,3 +38,16 @@ La API contará con las siguientes funciones.
 | getAdjacent |`http://localhost:8090/:mapType/findAdjacent/:idUrbanization/:action`| `GET` |int idUrbanization, String action|La función se corresponde a la solicitada **"obtenerAdyacente"**. Devolverá la urbanización adyacente en la dirección indicada. [up down right left]| `http://localhost:8090/7x7/findAdjacent/4/right` |
 | getMap |`http://localhost:8090/:mapType/getmap`| `GET` |String mapType|Esta función devolverá las urbanizaciones del mapa con sus coordenadas.| `http://localhost:8090/7x7/getmap` |
 | getUrbanizations |`http://localhost:8090/:mapType/getUrbanizations/?coord1=double&coord2=double&range=int`| `GET` |String mapType, Double coord1, Double coord2, int range|La función se corresponde a la solicitada 	**"obtenerUrbanizaciones"**. Devolverá la lista de urbanizaciones que el dron tiene que visitar y el lugar desde el cual saldrá.| `http://localhost:8090/7x7/geturbanizations/?coord1=121.1&coord2=121.13&range=2` |
+
+## Mapas a utilizar
+
+1.Mapa 3x3
+![Mapa 3x3](https://i.imgur.com/0lVo9Wf.png)
+2.Mapa 5x5
+![Mapa 5x5](https://i.imgur.com/VTzHihD.png)
+3.Mapa 7x7
+![Mapa 7x7](https://i.imgur.com/fZWsWhp.png)
+4.Mapa 9x9
+![Mapa 9x9](https://i.imgur.com/VTzHihD.png)
+
+
