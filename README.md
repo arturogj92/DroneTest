@@ -9,10 +9,11 @@
 
 
 ## Planteamiento del problema.
-Antes de comenzar a explicar el problema se han realizado una serie de consideraciones que se desarrollaran a continuación. Esto se debe a que considero que el negocio del problema no está 100% desarrollado. En una situación real esto lo solucionaria hablando con un Business Analyst / Product owner o bien Stakeholder si fuese necesario.
+Antes de comenzar a explicar el problema se han realizado una serie de consideraciones que se desarrollaran a continuación. Esto se debe a que el negocio del problema no está 100% desarrollado bajo mi punto de vista. En una situación real esto lo solucionaria hablando con un Business Analyst / Product owner o bien Stakeholder si fuese necesario.
 
+### Restricciones
 1. Se ha asumido que el centro del mapa siempre será el rango -1.
-2. A la hora de obtener las urbanizaciones mediante el método obtenerUrbanizaciones(Coord1, Coord2, Rango), se considera que la Coord1 y Coord2 pertenecen la ubicación en la que el drone empezará, por lo tanto será una urbanización que se añadirá al listado, ya que pasa por ella.
+2. A la hora de obtener las urbanizaciones mediante el método **obtenerUrbanizaciones(Coord1, Coord2, Rango)**, se considera que la Coord1 y Coord2 pertenecen la ubicación en la que el drone empezará, por lo tanto será una urbanización que se añadirá al listado, ya que pasa por ella.
 3. Una urbanización solo puede pertenecer a un rango, es decir, las urbanizaciones que pertenezcan al Rango 1, no están en el subconjunto de urbanizaciones del Rango 2.
 4. El tamaño del mapa siempre será de MxM es decir, serán mapas cuadrados.
 5. Se ha realizado una API para que sea más sencilla de consumir y sus datos puedan ser utilizados.
