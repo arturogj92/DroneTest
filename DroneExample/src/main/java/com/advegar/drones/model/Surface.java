@@ -14,6 +14,5 @@ public class Surface {
 	Coords coordX2;
 	Coords coordX3;
 	Coords coordX4;
-	
-	
+
 }

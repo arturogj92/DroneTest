@@ -45,11 +45,11 @@ public class MapController {
 
 		objectNode.put("Map size", mapType);
 
-		if (mapBuilderService.getUrbanizationByCoord(coord1, coord2, map)==0) {
-			objectNode.put("Error", "The coords "+coord1+ " - "+coord2+" does not belong to any urbanization");
+		if (mapBuilderService.getUrbanizationByCoord(coord1, coord2, map) == 0) {
+			objectNode.put("Error", "The coords " + coord1 + " - " + coord2 + " does not belong to any urbanization");
 			return new ResponseEntity<>(objectNode, HttpStatus.BAD_REQUEST);
 		}
-		
+
 		else if (urbId == 0) {
 			objectNode.put("Urbanization-ID", "Urbanization not found");
 		} else {
@@ -57,11 +57,6 @@ public class MapController {
 		}
 		return new ResponseEntity<>(objectNode, HttpStatus.OK);
 	}
-
-	// hacer metodos que falten del main para que esten aqui (los 3)
-	// ver si poner elde pintar el mapa.
-	// revisar todo codigo
-	// preparar documentacionl
 
 	@GetMapping("/{mapType}/findAdjacent/{id}/{action}")
 	public ResponseEntity<ObjectNode> getAdjacent(@PathVariable String mapType, @PathVariable String action,
@@ -124,12 +119,10 @@ public class MapController {
 
 	}
 
-	// comprobracion de que esta fuera getUrbanizacionByCoord
 	@GetMapping("/{mapType}/geturbanizations/")
-	public ResponseEntity<?> dronePath(@PathVariable String mapType, @RequestParam double coord1,
+	public ResponseEntity<?> getUrbanizations(@PathVariable String mapType, @RequestParam double coord1,
 			@RequestParam double coord2, @RequestParam int range) {
 
-		ArrayNode arrayNode = mapper.createArrayNode();
 		ObjectNode objectNode = mapper.createObjectNode();
 		Map map = mapBuilderService.buildMap(mapType);
 
@@ -140,23 +133,20 @@ public class MapController {
 
 		int rangeNumber = (int) Math.floor((map.getSize() / 100) / 2);
 
-		
-		
 		if (range > rangeNumber || range == 0) {
 			objectNode.put("Error", "The range must be between 0 and " + rangeNumber);
 			return new ResponseEntity<>(objectNode, HttpStatus.BAD_REQUEST);
 		}
-		
-		if (mapBuilderService.getUrbanizationByCoord(coord1, coord2, map)==0) {
-			objectNode.put("Error", "The coords "+coord1+ " - "+coord2+" does not belong to any urbanization");
+
+		if (mapBuilderService.getUrbanizationByCoord(coord1, coord2, map) == 0) {
+			objectNode.put("Error", "The coords " + coord1 + " - " + coord2 + " does not belong to any urbanization");
 			return new ResponseEntity<>(objectNode, HttpStatus.BAD_REQUEST);
 		}
-		
+
 		List<Integer> dronePath = new ArrayList<Integer>();
 
 		dronePath = mapBuilderService.droneList(coord1, coord2, map, rangeNumber);
-		
-		
+
 		return new ResponseEntity<>(dronePath, HttpStatus.OK);
 
 	}

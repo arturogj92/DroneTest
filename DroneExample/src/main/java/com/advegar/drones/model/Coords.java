@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@AllArgsConstructor 
+@AllArgsConstructor
 public class Coords {
 
 	double a;

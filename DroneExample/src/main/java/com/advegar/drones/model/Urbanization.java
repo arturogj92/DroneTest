@@ -9,9 +9,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Urbanization {
 
-	
 	private int id;
 	private Surface surface;
 	private int range;
-	
+
 }

@@ -19,5 +19,4 @@ public class Map {
 		this.area = size * size;
 	}
 
-
 }
