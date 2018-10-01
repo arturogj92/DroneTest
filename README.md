@@ -11,14 +11,15 @@
 ## Planteamiento del problema.
 Antes de comenzar a explicar el problema se han realizado una serie de consideraciones que se desarrollaran a continuación. Esto se debe a que el negocio del problema no está 100% desarrollado bajo mi punto de vista. En una situación real esto lo solucionaria hablando con un Business Analyst / Product owner o bien Stakeholder si fuese necesario.
 
+**Se ha realizado una API para que sea más sencilla de consumir y sus datos puedan ser utilizados.**
+
 ### Restricciones
 1. Se ha asumido que el centro del mapa siempre será el rango -1.
 2. A la hora de obtener las urbanizaciones mediante el método **obtenerUrbanizaciones(Coord1, Coord2, Rango)**, se considera que la Coord1 y Coord2 pertenecen a la ubicación en la que el drone empezará, por lo tanto será una urbanización que se añadirá al listado que se entregará al drone, ya que pasa por ella.
 3. Una urbanización solo puede pertenecer a un rango, es decir, las urbanizaciones que pertenezcan al Rango 1, no están en el subconjunto de urbanizaciones del Rango 2.
 4. El tamaño del mapa siempre será de MxM es decir, serán mapas cuadrados.
-5. Se ha realizado una API para que sea más sencilla de consumir y sus datos puedan ser utilizados.
-6. Los mapas utilizados serán de 3x3, 5x5, 7x7 y 9x9. Aunque mediante la modificacion de unas constantes se pueden utilizar mapas de mayor tamaño.
-7. Las urbanizaciones constarán de 4 coordenadas X1, X2, X3 ,X4. Serán siempre cuadrados al igual que el mapa y cada coordenada pertenecerá a un vértice del cuadrado. Ver imagen de abajo.
+5. Los mapas utilizados serán de 3x3, 5x5, 7x7 y 9x9. Aunque mediante la modificacion de unas constantes se pueden utilizar mapas de mayor tamaño.
+6. Las urbanizaciones constarán de 4 coordenadas X1, X2, X3 ,X4. Serán siempre cuadrados al igual que el mapa y cada coordenada pertenecerá a un vértice del cuadrado. Ver imagen de abajo.
   
 ![Urbanization](https://img.imgur.com/8aIHuSA.png)
 
