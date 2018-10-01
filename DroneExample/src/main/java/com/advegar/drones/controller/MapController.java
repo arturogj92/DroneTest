@@ -145,7 +145,7 @@ public class MapController {
 
 		List<Integer> dronePath = new ArrayList<Integer>();
 
-		dronePath = mapBuilderService.droneList(coord1, coord2, map, rangeNumber);
+		dronePath = mapBuilderService.droneList(coord1, coord2, map, range);
 
 		return new ResponseEntity<>(dronePath, HttpStatus.OK);
 

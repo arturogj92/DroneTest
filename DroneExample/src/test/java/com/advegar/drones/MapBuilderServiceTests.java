@@ -1,9 +1,5 @@
 package com.advegar.drones;
 
-import static org.mockito.Mockito.mock;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,22 +8,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.advegar.drones.controller.MapController;
-import com.advegar.drones.model.Coords;
 import com.advegar.drones.model.Map;
 import com.advegar.drones.model.Urbanization;
 import com.advegar.drones.service.MapBuilderService;
 import com.advegar.drones.service.impl.MapBuilderServiceImpl;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MapBuilderServiceTests {
@@ -35,17 +26,17 @@ public class MapBuilderServiceTests {
 	@InjectMocks
 	private MapController mapController;
 
-	@Autowired
-	ObjectMapper mapper;
-	
+	@Mock
+	private MapBuilderService mapBuilderService;
+
 	private MockMvc mockMvc;
-	
-	
 
 	@Before
 	public void setup() {
 		MockitoAnnotations.initMocks(this);
 		this.mockMvc = MockMvcBuilders.standaloneSetup(mapController).build();
+		
+		
 	}
 
 	@Test
@@ -154,17 +145,6 @@ public class MapBuilderServiceTests {
 		Assert.assertNotEquals(mapBuilder.droneList(136.12, 121.37, map, 1), droneList);
 
 	}
-
-	
-    @Test
-    public void testCreateSignupFormInvalidUser() throws Exception {
-    	
-    	MapBuilderService map = mock(MapBuilderService.class);
-    	
-    	
-        this.mockMvc.perform(get("/3x3/findUrb/?coord1=121.1&coord2=121.13")).andExpect(status().isOk());
-        
-    }
 
 
 

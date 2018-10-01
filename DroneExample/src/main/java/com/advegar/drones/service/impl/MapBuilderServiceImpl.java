@@ -2,6 +2,7 @@ package com.advegar.drones.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -91,7 +92,7 @@ public class MapBuilderServiceImpl implements MapBuilderService {
 				}
 
 				if ((i != 0) && urb.getRange() != rangeNumber
-						&& urb.getRange() == -1 & (findUrbById(urbList, up).getRange() == startRange
+						&& urb.getRange() == -1 && (findUrbById(urbList, up).getRange() == startRange
 								|| findUrbById(urbList, down).getRange() == startRange
 								|| findUrbById(urbList, left).getRange() == startRange
 								|| findUrbById(urbList, right).getRange() == startRange)) {
@@ -108,6 +109,7 @@ public class MapBuilderServiceImpl implements MapBuilderService {
 
 	}
 
+	@Override
 	public Urbanization findUrbById(List<Urbanization> list, int id) {
 		for (Urbanization urb : list) {
 			if (urb.getId() == id) {
@@ -117,6 +119,7 @@ public class MapBuilderServiceImpl implements MapBuilderService {
 		return null;
 	}
 
+	@Override
 	public int getUrbanizationByCoord(double x, double y, Map map) {
 
 		for (Urbanization urb : map.getUrbList()) {
@@ -131,6 +134,7 @@ public class MapBuilderServiceImpl implements MapBuilderService {
 
 	}
 
+	@Override
 	public int getAdjacent(int id, String direccion, Map map) {
 
 		if (id <= 0 | id > map.getArea() / Constants.SCALE) {
@@ -197,14 +201,8 @@ public class MapBuilderServiceImpl implements MapBuilderService {
 	@Override
 	public List<Integer> droneList(double coord1, double coord2, Map map, int range) {
 
-		List<Integer> droneList = new ArrayList<Integer>();
-
-		for (Urbanization u : map.getUrbList()) {
-			if (u.getRange() == range) {
-				droneList.add(u.getId());
-			}
-
-		}
+		List<Integer> droneList = map.getUrbList().stream().filter(u -> u.getRange() == range).map(Urbanization::getId)
+				.collect(Collectors.toList());
 
 		droneList.add(getUrbanizationByCoord(coord1, coord2, map));
 
